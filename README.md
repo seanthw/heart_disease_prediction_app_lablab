@@ -12,8 +12,8 @@ This repository contains a FastAPI-based API for predicting heart disease risk u
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/heart-disease-prediction.git
-   cd heart-disease-prediction
+   git clone https://github.com/seanthw/heart_disease_prediction_app_lablab.git
+   cd heart_disease_prediction
    ```
 
 2. Create a virtual environment:
