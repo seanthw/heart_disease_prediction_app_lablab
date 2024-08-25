@@ -1,7 +1,7 @@
 from pydantic import BaseModel, EmailStr
 from typing import Optional
 
-class HeartDataBase(BaseModel):
+class HeartDiseaseInput(BaseModel):
     age: int
     sex: int
     cp: int
@@ -16,20 +16,13 @@ class HeartDataBase(BaseModel):
     ca: int
     thal: int
 
-class HeartDataCreate(HeartDataBase):
-    pass
-
-class HeartData(HeartDataBase):
+class HeartData(HeartDiseaseInput):
     id: int
-    target: bool
+    target: int
     user_id: int
 
     class Config:
-          from_attributes = True
-
-class PredictionResult(BaseModel):
-    prediction: float
-    heart_disease_probability: float
+        from_attributes = True
 
 class UserBase(BaseModel):
     email: EmailStr
@@ -39,10 +32,9 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
-    is_active: bool
 
     class Config:
-         from_attributes = True
+        from_attributes = True
 
 class Token(BaseModel):
     access_token: str
